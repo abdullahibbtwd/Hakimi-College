@@ -105,9 +105,7 @@ NEXT_PUBLIC_CONVEX_URL=https://<your-convex-deployment-url>.convex.cloud # From 
 # Webhooks (for Clerk to Convex sync)
 WEBHOOK_SECRET=whsec_YOUR_CLERK_WEBHOOK_SECRET # From Clerk Dashboard -> Webhooks
 
-# Payment Gateway (Example: Paystack)
-PAYSTACK_SECRET_KEY=sk_test_YOUR_PAYSTACK_SECRET_KEY # Store in Convex Secrets too!
-NEXT_PUBLIC_BASE_URL=http://localhost:3000 # Your app's base URL (important for payment callbacks)
+
 
 Convex Setup
 Initialize Convex (if not already done):
