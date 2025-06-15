@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import { useState, useEffect } from "react";
@@ -20,6 +21,19 @@ import {
 } from "@mui/material";
 import { toast } from "sonner";
 
+interface ExamFormData {
+  courseId: string;
+  teacherId: string;
+  invigilatorId: string;
+  examHall: string;
+  date: string;
+  startTime: string;
+  endTime: string;
+  semester: string;
+  programId: string;
+  levelId: string;
+}
+
 interface ExamFormModelProps {
   isOpen: boolean;
   onClose: () => void;
@@ -28,7 +42,7 @@ interface ExamFormModelProps {
 }
 
 export default function ExamFormModel({ isOpen, onClose, type, data }: ExamFormModelProps) {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<ExamFormData>({
     courseId: "",
     teacherId: "",
     invigilatorId: "",

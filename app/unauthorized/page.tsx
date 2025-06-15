@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import { Button } from "@mui/material";
 import Link from "next/link";
 
 export default function UnauthorizedPage() {
@@ -8,10 +8,10 @@ export default function UnauthorizedPage() {
         <div className="text-center">
           <h1 className="mb-4 text-4xl font-bold text-red-600">Access Denied</h1>
           <p className="mb-6 text-gray-600">
-            You don't have permission to access this page. Please contact your
+            You don&apos;t have permission to access this page. Please contact your
             administrator if you believe this is a mistake.
           </p>
-          <Button asChild>
+          <Button >
             <Link href="/">Return to Home</Link>
           </Button>
         </div>
