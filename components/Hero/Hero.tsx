@@ -3,7 +3,6 @@ import React from "react";
 import Navbar from "../Navbar/Navbar";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import pattern from "../assets/pattern.svg";
-import hero from "../assets/logo.png";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import { useQuery } from "convex/react";
@@ -93,7 +92,7 @@ const Hero = () => {
           {/* hero image */}
           <div className="flex justify-center items-center">
             <motion.img
-              src={hero.src}
+              src="/hakimi.png"
               alt=""
               initial={{ x: 50, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
