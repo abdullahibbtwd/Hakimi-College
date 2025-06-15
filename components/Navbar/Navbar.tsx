@@ -20,71 +20,17 @@ const Navbar = () => {
         >
           {/* Logo Section */}
           <div className="flex px-10 items-center">
-            <h1 className="font-bold text-2xl ">JICOHSAT</h1>
+            <h1 className="font-bold text-2xl ">HAKIMI COLLEGE TWD</h1>
           </div>
 
           {/* Button Section */}
           {isLoaded && isSignedIn && (
             <div className="flex gap-4">
-              {/* {userData?.role === "student" &&
-                userData.studentStatus === "progress" ? (
-                  <button
-                    onClick={() => router.push(`progress`)}
-                    className="inline-block bg-[#f7ba34] text-white font-semibold py-2 px-6 rounded-lg hover:bg-[#69a79c] cursor-pointer duration-200"
-                  >
-                    Dashboard
-                  </button>
-                ): userData?.studentStatus === 'rejected' ? <> 
-                <button onClick={() => router.push(`rejection`)}
-                    className="inline-block bg-[#f7ba34] text-white font-semibold py-2 px-6 rounded-lg hover:bg-[#69a79c] cursor-pointer duration-200"
-                  >
-                    Dashboard
-                  </button></>: userData?.studentStatus !== "rejected" || 'progress' || "admitted"  ? <>
-                  <button
-                onClick={() => router.push(`application`)}
+             
+              <button 
                 className="inline-block bg-[#f7ba34] text-white font-semibold py-2 px-6 rounded-lg hover:bg-[#69a79c] cursor-pointer duration-200"
-              >
-                Dashboard
-              </button>
-                  </> : userData.role === "admin" ? <><button
-                onClick={() => router.push(`admin`)}
-                className="inline-block bg-[#f7ba34] text-white font-semibold py-2 px-6 rounded-lg hover:bg-[#69a79c] cursor-pointer duration-200"
-              >
-                Dashboard
-              </button></>:<><button
-                onClick={() => router.push(`${role}`)}
-                className="inline-block bg-[#f7ba34] text-white font-semibold py-2 px-6 rounded-lg hover:bg-[#69a79c] cursor-pointer duration-200"
-              >
-                Dashboard
-              </button></>  } */}
-              {/* if (userData.role === 'student') {
-      switch (userData.studentStatus) {
-        case 'progress':
-          if (!pathname.startsWith('/progress')) {
-            shouldRedirect = true;
-            targetPath = '/progress';
-          }
-          break;
-        case 'admitted':
-          if (!pathname.startsWith('/student')) {
-            shouldRedirect = true;
-            targetPath = '/student';
-          }
-          break;
-        case 'rejected':
-          if (!pathname.startsWith('/rejection')) {
-            shouldRedirect = true;
-            targetPath = '/rejection';
-          }
-          break;
-        default:
-          if (!pathname.startsWith('/application')) {
-            shouldRedirect = true;
-            targetPath = '/application';
-          }
-      }
-    } */}
-              <button onClick={()=> router.push(`/${role}`)}>
+                  
+              onClick={()=> router.push(`/${role}`)}>
                 Dashboard
               </button>
 
@@ -103,12 +49,7 @@ const Navbar = () => {
             </SignInButton>
           )}
 
-          {/* <SignInButton mode="modal">
-            <button
-          
-        className='inline-block bg-[#f7ba34] text-white font-semibold py-2 px-6 rounded-lg hover:bg-[#69a79c]  cursor-pointer duration-200 '>Sign In</button>
-         
-          </SignInButton> */}
+     
         </motion.div>
       </nav>
     </div>

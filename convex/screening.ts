@@ -54,7 +54,7 @@ export const reserveScreeningSlot = mutation({
       slotId: availableSlot._id,
       date: availableSlot.date,
       startTime: availableSlot.startTime,
-      location: "Jicohsat auditorium, Jicohsat School, Tudun Wada"
+      location: "HAKIMI auditorium, HAKIMI School, Tudun Wada"
     };
   },
 });

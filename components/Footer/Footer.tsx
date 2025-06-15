@@ -14,10 +14,10 @@ const Footer = () => {
         <div className="flex gap-5 flex-col md:flex-row  w-full">
           {/* first section */}
           <div className="space-y-4 w-full md:w-2/6 px-5">
-            <h1 className="text-2xl font-bold">The Jicohsat</h1>
+            <h1 className="text-2xl font-bold">The HAKIMI</h1>
             <p className="text-dark">
               Jamilu Ibrahim Imperial College of Health Sciences and Technology
-              (JICOHSAT), is a premier institution dedicated to excellence in
+              (HAKIMI), is a premier institution dedicated to excellence in
               healthcare education, innovation, and dedication. Located at No.
               13 Jos Road, Tudun Wada Dankadai, Tudun Wada Local Government,
               Kano State

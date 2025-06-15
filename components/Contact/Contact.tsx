@@ -51,7 +51,7 @@ const Contact = () => {
                 "
             >
               <MdOutlineEmail />
-              <p>jicohsat@info.com</p>
+              <p>HAKIMI@info.com</p>
             </motion.div>
           </div>
         </div>

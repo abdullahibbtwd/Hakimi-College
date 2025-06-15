@@ -335,139 +335,14 @@ const ApplicationForm: React.FC = () => {
   };
 
   const reserveSlotMutation = useMutation(api.screening.reserveScreeningSlot);
-  // const handleSubmit = async (e: React.FormEvent) => {
-  //   e.preventDefault();
-
-  //   if (validateStep(activeStep) && formData.agreeTerms) {
-  //     try {
-  //       setLoading(true);
-  //       const applicationDate = Date.now();
-  //       const applicationNumber = `JICO-${applicationDate.toString().slice(-6)}-${Math.floor(
-  //         Math.random() * 10000
-  //       )
-  //         .toString()
-  //         .padStart(4, "0")}`;
-
-  //       // Reserve a screening slot
-  //       const slotDetails = await reserveSlotMutation();
-  //       if (!slotDetails) throw new Error("No available screening slots");
-
-  //       // Add screening details to form data for PDF
-  //       const formDataWithScreening = {
-  //         ...formData,
-  //         screeningDate: slotDetails.date,
-  //         screeningTime: slotDetails.startTime,
-  //         screeningLocation: slotDetails.location,
-  //       };
-
-  //       // Generate PDF without saving it locally
-  //       const pdfBlob = await GenratePdf(
-  //         formDataWithScreening,
-  //         applicationNumber
-  //       );
-  //       const pdfFile = new File([pdfBlob], "application.pdf", {
-  //         type: "application/pdf",
-  //       });
-
-  //       // Function to upload files and get storage IDs
-  //       const uploadFileAndGetId = async (file: File | null) => {
-  //         if (!file) return undefined;
-  //         return await uploadFile(file);
-  //       };
-
-  //       // Upload all required files
-  //       const [
-  //         secondarySchoolResultId,
-  //         birthCertificateId,
-  //         nationalIdId,
-  //         primaryCertificateId,
-  //         transcriptId,
-  //         personalStatementId,
-  //         generatedPdfId,
-  //       ] = await Promise.all([
-  //         uploadFileAndGetId(formData.secondarySchoolResultFile || null),
-  //         uploadFileAndGetId(formData.birthCertificateFile || null),
-  //         uploadFileAndGetId(formData.nationalIdFile || null),
-  //         uploadFileAndGetId(formData.primaryCertificateFile || null),
-  //         uploadFileAndGetId(formData.transcriptFile || null),
-  //         uploadFileAndGetId(formData.personalStatementFile || null),
-  //         uploadFileAndGetId(pdfFile),
-  //       ]);
-
-  //       // Prepare the form data for submission
-  //       const {
-  //         // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  //         secondarySchoolResultFile,
-  //         // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  //         birthCertificateFile,
-  //         // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  //         nationalIdFile,
-  //         // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  //         primaryCertificateFile,
-  //         // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  //         transcriptFile,
-  //         // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  //         personalStatementFile,
-  //         ...formDataWithoutFiles
-  //       } = formData;
-  //   const profileImageId = formData.profileImage 
-  //       ? await uploadFile(formData.profileImage) 
-  //       : undefined;
-  //       const processedFormData = {
-  //         ...formDataWithoutFiles,
-  //         applicationNumber,
-  //         recommendationLetters: Number(
-  //           formDataWithoutFiles.recommendationLetters
-  //         ),
-  //       };
-
-  //       // Submit form data
-  //       await submitMutation({
-  //         formData: processedFormData,
-  //         files: {
-  //           secondarySchoolResult: secondarySchoolResultId,
-  //           birthCertificate: birthCertificateId,
-  //           nationalId: nationalIdId,
-  //           primaryCertificate: primaryCertificateId,
-  //           transcript: transcriptId,
-  //           personalStatement: personalStatementId,
-  //           generatedPdf: generatedPdfId,
-  //            profileImage: profileImageId,
-  //         },
-  //       });
-
-  //       toast.success("Application submitted successfully!");
-  //       setLoading(false);
-  //       router.push("/");
-  //     } catch (error) {
-  //       console.error("Submission failed:", error);
-  //       toast.error("Submission failed. Please try again.");
-  //       setLoading(false);
-  //     }
-  //   } else if (!formData.agreeTerms) {
-  //     setErrors((prev) => ({ ...prev, agreeTerms: true }));
-  //   }
-  // };
-
-  // const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-  //   const { name, files } = e.target;
-  //   setFormData((prev) => ({
-  //     ...prev,
-  //     [name as keyof FormData]: files && files.length > 0 ? files[0] : null,
-  //   }));
-
-  //   if (errors[name as string]) {
-  //     setErrors((prev) => ({ ...prev, [name as string]: false }));
-  //   }
-  // };
- const handleSubmit = async (e: React.FormEvent) => {
+const handleSubmit = async (e: React.FormEvent) => {
   e.preventDefault();
 
   if (validateStep(activeStep) && formData.agreeTerms) {
     try {
       setLoading(true);
       const applicationDate = Date.now();
-      const applicationNumber = `JICO-${applicationDate.toString().slice(-6)}-${Math.floor(
+      const applicationNumber = `HCT-${applicationDate.toString().slice(-6)}-${Math.floor(
         Math.random() * 10000
       )
         .toString()
@@ -1215,7 +1090,7 @@ const ApplicationForm: React.FC = () => {
         sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}
       >
         <Typography component="h1" variant="h4" align="center" gutterBottom>
-          JICOHSAT ONLINE FORM
+          HAKIMI ONLINE FORM
         </Typography>
 
         <Stepper
