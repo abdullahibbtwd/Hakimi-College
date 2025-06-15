@@ -9,7 +9,7 @@ import Hero from "@/components/Hero/Hero";
 
 export default function Home() {
   return (
-    <div className="flex w-full justify-center">
+    <div className="flex w-full justify-center overflow-x-hidden">
        <div className="min-h-screen max-w-[1266px] gap-16 w-full ">
     <Hero/>
     <Courses/>

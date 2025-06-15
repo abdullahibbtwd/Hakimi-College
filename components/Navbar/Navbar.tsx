@@ -20,7 +20,8 @@ const Navbar = () => {
         >
           {/* Logo Section */}
           <div className="flex px-10 items-center">
-            <h1 className="font-bold text-2xl ">HAKIMI COLLEGE TWD</h1>
+            <h1 className="font-bold text-2xl hidden md:flex">HAKIMI COLLEGE TWD</h1>
+            <h1 className="font-bold text-2xl md:hidden">HCTWD</h1>
           </div>
 
           {/* Button Section */}
