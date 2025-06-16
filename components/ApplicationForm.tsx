@@ -49,7 +49,7 @@ interface FormData {
   state: string;
   zipCode: string;
   religion: string;
-  country: string;
+  lga: string;
   applicationNumber?: string;
   departmentId: string;
   programId: string;
@@ -139,7 +139,7 @@ const ApplicationForm: React.FC = () => {
     city: "",
     state: "",
     zipCode: "",
-    country: "",
+    lga: "",
     highSchool: "",
     graduationYear: "",
     gpa: "",
@@ -283,7 +283,7 @@ const ApplicationForm: React.FC = () => {
         if (!formData.city) newErrors.city = true;
         if (!formData.state) newErrors.state = true;
         if (!formData.zipCode) newErrors.zipCode = true;
-        if (!formData.country) newErrors.country = true;
+        if (!formData.lga) newErrors.lga = true;
         if (!formData.religion) newErrors.religion = true;
         break;
       case 1: // Academic Background
@@ -919,7 +919,7 @@ const handleSubmit = async (e: React.FormEvent) => {
               <Typography>Phone: {formData.phone}</Typography>
               <Typography>
                 Address: {formData.address}, {formData.city}, {formData.state}{" "}
-                {formData.zipCode}, {formData.country}
+                {formData.zipCode}, {formData.lga}
               </Typography>
             </Grid>
 

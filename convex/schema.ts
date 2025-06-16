@@ -31,7 +31,7 @@ export default defineSchema({
     imageUrl:v.string(),
     state: v.string(),
     zipCode: v.string(),
-    country: v.string(),
+    lga: v.string(),
     religion: v.string(),
     level: v.optional(
       v.union(v.literal("level1"), v.literal("level2"), v.literal("graduate"))

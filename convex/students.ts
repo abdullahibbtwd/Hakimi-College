@@ -27,7 +27,7 @@ export const submitApplication = mutation({
       departmentId: v.id("departments"),
       programId: v.id("program"),
       zipCode: v.string(),
-      country: v.string(),
+      lga: v.string(),
       religion: v.string(),
       applicationNumber:v.string(),
       // Academic Information

@@ -17,7 +17,7 @@ interface FormData {
   city: string;
   state: string;
   zipCode: string;
-  country: string;
+  lga: string;
   screeningDate: string;
   screeningTime: string;
   programName:string; 
@@ -129,7 +129,7 @@ const GenratePdf = (
     ["Phone:", data.phone],
     [
       "Address:",
-      `${data.address}, ${data.city}, ${data.state} ${data.zipCode}, ${data.country}`,
+      `${data.address}, ${data.city}, ${data.state} ${data.zipCode}, ${data.lga}`,
     ],
   ];
 

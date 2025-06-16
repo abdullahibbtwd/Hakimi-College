@@ -1063,8 +1063,8 @@ const Personal = ({ formData, errors, handleChange }: PersonalProps) => {
             disabled={!formData.state}
           >
             <Select
-              name="country"
-              value={formData.country}
+              name="lga"
+              value={formData.lga}
               onChange={handleChange}
               label="Select LGA"
                   MenuProps={MenuProps}
