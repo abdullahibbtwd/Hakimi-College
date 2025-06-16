@@ -6,7 +6,7 @@ import Table from "@/components/Table";
 import FormModel from "@/components/FormModel";
 import { useQuery } from "convex/react";
 import { api } from "@/convex/_generated/api";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 
 type Timetable = {
   _id: string;
@@ -54,13 +54,13 @@ const TimetablePage = () => {
   const timetables = useQuery(api.timetables.getTimetables) || [];
   const departments = useQuery(api.departments.getDepartments) || [];
   const programs = useQuery(api.program.getAllProgram) || [];
-  
+    const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 10;
   const [selectedDepartment, setSelectedDepartment] = useState("");
   const [selectedProgram, setSelectedProgram] = useState("");
   
   // Filter timetables based on selection
-  const filteredTimetables = timetables
-    .map(t => {
+  const filteredTimetables = timetables.map(t => {
       const department = departments.find(d => d._id === t.departmentId);
       const program = programs.find(p => p._id === t.programId);
       
@@ -79,6 +79,15 @@ const TimetablePage = () => {
       (!selectedDepartment || t.departmentId === selectedDepartment) &&
       (!selectedProgram || t.programId === selectedProgram)
     );
+
+  const totalPages = Math.ceil(filteredTimetables.length / itemsPerPage);
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const currentTimeTables = filteredTimetables.slice(startIndex, endIndex);
+
+  const handlePageChange = useCallback((page: number) => {
+    setCurrentPage(page);
+  }, []);
 
   const renderRow = (item: Timetable) => {
     console.log("Rendering timetable row:", item);
@@ -160,13 +169,21 @@ const TimetablePage = () => {
         <Table 
           columns={columns} 
           renderRow={renderRow} 
-          data={filteredTimetables} 
+          data={currentTimeTables} 
         />
       </div>
       
       {/* Pagination */}
       <div>
-        <Pagination />
+     {totalPages > 1 && (
+        <div>
+          <Pagination 
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onPageChange={handlePageChange}
+          />
+        </div>
+      )}
       </div>
     </div>
   );

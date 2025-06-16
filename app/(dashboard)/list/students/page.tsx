@@ -64,7 +64,7 @@ const StudentPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
   
-  const students = useQuery(api.students.getStudents) || [];
+  const students = useQuery(api.students.getAdmittedStudentsWithDetails) || [];
   const departments = useQuery(api.departments.getDepartments) || [];
   const programs = useQuery(api.program.getAllProgram) || [];
   const userData = useQuery(api.users.getCurrentUser);
