@@ -1106,19 +1106,7 @@ const Personal = ({ formData, errors, handleChange }: PersonalProps) => {
           />
         </Grid>
 
-        {/* <Grid item xs={12} md={4}>
-          <Typography variant="subtitle1">Local Government</Typography>
-          <TextField
-            required
-            fullWidth
-            name="country"
-            value={formData.country}
-            onChange={handleChange}
-            error={errors.country}
-            helperText={errors.country ? "Country is required" : ""}
-          />
-        </Grid> */}
-
+      
         <Grid item xs={12} md={4}>
           <Typography variant="subtitle1">Religion</Typography>
           <FormControl fullWidth  required error={errors.religion}>
